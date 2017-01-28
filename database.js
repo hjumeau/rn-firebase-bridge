@@ -287,6 +287,8 @@ export class Query {
         };
     }
 
+    off() : () => void {}
+
     orderByChild(path:string) : QueryType {
         return new Query(this.app, this.parentPromise, [...this.query, ['orderByChild', path]]);
     }
