@@ -46,6 +46,16 @@ Also make sure your `Other linker flags` setting under `Build Settings` includes
 
 In your firebase console follow the instructions for adding Android to your project.
 
+Make sure to add the necessary dependencies for the Firebase SDKs in your module Gradle file (usually the app/build.gradle).
+
+```
+dependencies {
+...
+compile "com.google.firebase:firebase-core:x.x.x"
+compile "com.google.firebase:firebase-database:x.x.x"
+compile "com.google.firebase:firebase-auth:x.x.x"
+```
+
 # Getting started
 
 Interfacing with the native SDK all happens asynchronously so the examples below
