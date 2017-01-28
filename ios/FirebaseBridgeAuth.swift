@@ -77,6 +77,8 @@ func authErrorCodeToString(code:FIRAuthErrorCode) -> String {
     return "auth/provider-already-linked"
   case .ErrorCodeNoSuchProvider:
     return "auth/no-such-provider"
+  default:
+    return "auth/internal-error"
   }
 }
 
