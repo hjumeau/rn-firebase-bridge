@@ -290,6 +290,11 @@ class FirebaseBridgeDatabase: RCTEventEmitter, RCTInvalidating {
   
   // We receive an array of a single element whh is the value to set
   @objc func update(appName: String, databaseUrl: String, value:Dictionary<String, AnyObject>, resolver resolve: RCTPromiseResolveBlock, rejecter reject: RCTPromiseRejectBlock) {
+    // Delete multiple children by specifying nil as the value
+    // replace NSNull to nil
+    for (key,value) in value {
+      self.setValue(value is NSNull ? nil : value, forKey: key)
+    }  
     getRefRomUrl(appName, databaseUrl: databaseUrl,
                  success: { (ref) -> Void in
                   ref.updateChildValues(value, withCompletionBlock: {(error, ref) in
