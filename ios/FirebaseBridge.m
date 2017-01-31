@@ -187,6 +187,13 @@ RCT_EXTERN_METHOD(credential:(NSString)token
                   rejecter:(RCTPromiseRejectBlock)reject)
 @end
 
+@interface RCT_EXTERN_MODULE(FirebaseBridgeEmailPasswordAuthProvider, NSObject)
+
+RCT_EXTERN_METHOD(credential:(NSString)email
+                  password:NSString
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+@end
 
 @interface RCT_EXTERN_MODULE(FirebaseBridgeGithubAuthProvider, NSObject)
 

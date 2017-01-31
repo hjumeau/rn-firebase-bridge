@@ -156,11 +156,18 @@ const {
     FirebaseBridgeTwitterAuthProvider,
     FirebaseBridgeGoogleAuthProvider,
     FirebaseBridgeGithubAuthProvider,
+    FirebaseBridgeEmailPasswordAuthProvider
 } = NativeModules;
 
 Auth.FacebookAuthProvider = {
     credential(token:string) : Promise<AuthCredential> {
         return FirebaseBridgeFacebookAuthProvider.credential(token);
+    },
+};
+
+Auth.EmailPasswordAuthProvider = {
+    credential(email:string, password:string) : Promise<AuthCredential> {
+        return FirebaseBridgeEmailPasswordAuthProvider.credential(email, password);
     },
 };
 
