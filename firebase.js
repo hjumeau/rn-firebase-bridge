@@ -91,7 +91,7 @@ auth.FacebookAuthProvider = Auth.FacebookAuthProvider;
 auth.GoogleAuthProvider = Auth.GoogleAuthProvider;
 auth.GithubAuthProvider = Auth.GithubAuthProvider;
 auth.TwitterAuthProvider = Auth.TwitterAuthProvider;
-auth.EmailAuthProvider = Auth.EmailPasswordAuthProvider
+auth.EmailPasswordAuthProvider = Auth.EmailPasswordAuthProvider;
 
 export default {
     database,
