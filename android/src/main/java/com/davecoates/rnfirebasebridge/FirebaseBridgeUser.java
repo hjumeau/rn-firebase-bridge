@@ -21,7 +21,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void sendEmailVerification(String appName, final Promise promise)
+    public void sendEmailVerification(String appName, final Promise promise)
     {
         this.getUser(appName).sendEmailVerification()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -39,7 +39,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void delete(String appName, final Promise promise)
+    public void delete(String appName, final Promise promise)
     {
         this.getUser(appName).delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -57,7 +57,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void getToken(String appName, Boolean forceRefresh, final Promise promise)
+    public void getToken(String appName, Boolean forceRefresh, final Promise promise)
     {
         this.getUser(appName).getToken(forceRefresh)
                 .addOnSuccessListener(new OnSuccessListener<GetTokenResult>() {
@@ -75,7 +75,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void link(String appName, String credentialId, final Promise promise)
+    public void link(String appName, String credentialId, final Promise promise)
     {
         AuthCredential credential = FirebaseBridgeCredentialCache.getCredential(credentialId);
         if (credential == null) {
@@ -99,7 +99,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void reauthenticate(String appName, String credentialId, final Promise promise)
+    public void reauthenticate(String appName, String credentialId, final Promise promise)
     {
         AuthCredential credential = FirebaseBridgeCredentialCache.getCredential(credentialId);
         if (credential == null) {
@@ -123,7 +123,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void reload(String appName, final Promise promise)
+    public void reload(String appName, final Promise promise)
     {
         this.getUser(appName).reload()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -141,7 +141,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void unlink(String appName, String providerId, final Promise promise)
+    public void unlink(String appName, String providerId, final Promise promise)
     {
         this.getUser(appName).unlink(providerId)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -159,7 +159,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void updateEmail(String appName, String newEmail, final Promise promise)
+    public void updateEmail(String appName, String newEmail, final Promise promise)
     {
         this.getUser(appName).updateEmail(newEmail)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -177,7 +177,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void updatePassword(String appName, String newPassword, final Promise promise)
+    public void updatePassword(String appName, String newPassword, final Promise promise)
     {
         this.getUser(appName).updatePassword(newPassword)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -195,7 +195,7 @@ public class FirebaseBridgeUser extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    void updateProfile(String appName, ReadableArray profile, final Promise promise)
+    public void updateProfile(String appName, ReadableArray profile, final Promise promise)
     {
         ReadableMap data = profile.getMap(0);
         UserProfileChangeRequest.Builder builder = new UserProfileChangeRequest.Builder();
