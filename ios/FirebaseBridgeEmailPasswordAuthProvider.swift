@@ -17,8 +17,8 @@ class FirebaseBridgeEmailPasswordAuthProvider : NSObject {
     super.init()
   }
   
-  @objc func credential(email:String, password:String, resolver resolve: RCTPromiseResolveBlock, rejecter reject: RCTPromiseRejectBlock) {
-    let credential = FIREmailPasswordAuthProvider.credentialWithEmail(email, password: password)
+  @objc func credential(_ email:String, password:String, resolver resolve: RCTPromiseResolveBlock, rejecter reject: RCTPromiseRejectBlock) {
+    let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: password)
     resolve([
       "id": FirebaseBridgeCredentialCache.addCredential(credential),
       "provider": credential.provider,
